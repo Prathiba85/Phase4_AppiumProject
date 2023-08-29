@@ -1,0 +1,6 @@
+PageObjects\AddToCartPage.class
+PageObjects\BasePage.class
+PageObjects\SearchPage.class
+PageObjects\LoginPage.class
+StepDefinition\Hooks.class
+StepDefinition\AmazonStepDefinition.class

@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
+import org.openqa.selenium.support.FindBy;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -14,21 +16,21 @@ public class LoginPage extends BasePage {
 		super(driver);
 			
 	}
+	//@AndroidFindBy(id="com.amazon.mShop.android.shopping:id/btn_cancel")private  List <WebElement> cancel;
 
-	//Locators
-	@AndroidFindBy(id="com.amazon.mShop.android.shopping:id/btn_cancel")private List <WebElement> cancel;
+	
+	By btncancel= By.id("com.amazon.mShop.android.shopping:id/btn_cancel");
+	@CacheLookup
+	@FindBy(id="com.amazon.mShop.android.shopping:id/btn_cancel")private  WebElement buttoncancel;
 	
 	public void login(AndroidDriver driver)
 	{
 		
-		List <WebElement> cancel = driver.findElements(By.id("com.amazon.mShop.android.shopping:id/btn_cancel"));
+		List <WebElement> cancel = driver.findElements(btncancel);
 		if (cancel.size()>0) {
 			
-
-			// WebDriverWait wc = new WebDriverWait(driver, Duration.ofSeconds(10));
-			// wc.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.amazon.mShop.android.shopping:id/btn_cancel")));
-			driver.findElement(By.id("com.amazon.mShop.android.shopping:id/btn_cancel")).click();
-			
+			//driver.findElement(By.id("com.amazon.mShop.android.shopping:id/btn_cancel")).click();
+			buttoncancel.click();
 		}
 		else
 		{

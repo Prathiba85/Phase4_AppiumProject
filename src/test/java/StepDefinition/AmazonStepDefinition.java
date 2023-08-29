@@ -25,11 +25,13 @@ public class AmazonStepDefinition {
 
 	@Given("choose the product {string}")
 	public void choose_the_product(String string) {
+		sp.Searchproducts(driver);
 	    
 	}
 
 	@When("I complete Add To Cart")
 	public void i_complete_add_to_cart() {
+		sp.addproducttoCart(driver);
 	    
 	}
 

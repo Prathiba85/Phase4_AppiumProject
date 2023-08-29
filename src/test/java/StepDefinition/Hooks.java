@@ -20,7 +20,7 @@ import io.cucumber.java.Scenario;
 
 
 public class Hooks {
-	public static AndroidDriver driver;
+	public static  AndroidDriver driver;
 
 	@Before 
 	public void Setup() throws MalformedURLException  {
