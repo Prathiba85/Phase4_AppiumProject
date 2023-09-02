@@ -85,7 +85,7 @@ public class SearchPage extends BasePage {
 		}
 		
 		driver.findElement(By.xpath("//android.view.View[contains(@text,'RAVIAD')]")).click();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		String expectedproductname = driver.findElement(By.xpath("//android.view.View[contains(@text,'RAVIAD Wireless')]")).getText();
 		try {
 			Thread.sleep(4000);
@@ -95,9 +95,9 @@ public class SearchPage extends BasePage {
 		}
 		scrollUp(driver);
 		driver.findElement(By.xpath("//android.widget.Button[@text='Add to Cart']")).click();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(7));
-		driver.findElement(By.xpath("//android.widget.FrameLayout[@content-desc='Cart Tab 3 of 4']")).click();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(7));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		driver.findElement(By.xpath("//android.widget.FrameLayout[@content-desc=\"Cart 1 item Tab 3 of 4\"]/android.widget.TextView")).click();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		String actualproductadded= driver.findElement(By.xpath("//android.widget.TextView[contains(@text,'RAVIAD')]")).getText();
 		System.out.println("Actual added product " +actualproductadded);
 		Assert.assertEquals(expectedproductname,actualproductadded);

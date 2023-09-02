@@ -1,6 +1,7 @@
 PageObjects\AddToCartPage.class
-PageObjects\BasePage.class
-PageObjects\SearchPage.class
 PageObjects\LoginPage.class
 StepDefinition\Hooks.class
+TestRunner\TestRunner.class
+PageObjects\BasePage.class
+PageObjects\SearchPage.class
 StepDefinition\AmazonStepDefinition.class
